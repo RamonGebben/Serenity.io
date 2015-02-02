@@ -11,4 +11,6 @@
     - adding users
     - generating sites
     - installing tools
+- Create custom prompt
+    - Lets use this [powerline](https://github.com/ceejbot/powerline-js)
 - loads more..
