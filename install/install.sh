@@ -21,6 +21,7 @@ apt-get install -y python-software-properties build-essential
 curl -sL https://deb.nodesource.com/setup | sudo bash -
 
 # install rvm
+curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 curl -sSL https://get.rvm.io | sudo bash -s stable
 chmod -R g+w /usr/local/rvm
 rvm install ruby-2.1.0  
@@ -42,7 +43,7 @@ chmod 0440 /etc/sudoers.d/serenity
 # checkout serenity
 mkdir -p /serenity
 cd /serenity
-git clone https://github.com/RamonGebben/Serenity.io.git .
+git clone https://github.com/RamonGebben/Serenity.io.git /serenity
 mkdir -p /serenity/projects
 mkdir -p /serenity/flags
 
@@ -51,6 +52,7 @@ chown -R root:serenity /serenity
 chown -R root:serenity /serenity
 
 # link fish functions
+rm -r /etc/fish/functions
 ln -s /serenity/fish /etc/fish/functions
 
 # fix default umask
