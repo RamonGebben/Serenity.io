@@ -9,8 +9,8 @@ function add_user -a name -d "Adds a user to this system"
 
       if test -d /home/$name 
 
-        crow notice "Setting default group to 'devstar'"
-        sudo usermod -g devstar $name  
+        crow notice "Setting default group to 'serenity'"
+        sudo usermod -g serenity $name  
  
         crow notice "Hooking up byobu config"      
         sudo mkdir "/home/$name/.byobu"
@@ -18,7 +18,7 @@ function add_user -a name -d "Adds a user to this system"
         sudo chmod 777 "/home/$name/.byobu"
         sudo chmod 777 "/home/$name/.byobu/.tmux.conf"
         echo "source /serenity/config/byobu" > "/home/$name/.byobu/.tmux.conf" 
-        sudo chown -R $name:devstar "/home/$name/.byobu"
+        sudo chown -R $name:serenity "/home/$name/.byobu"
         sudo chmod 700 "/home/$name/.byobu"
         sudo chmod 700 "/home/$name/.byobu/.tmux.conf"
 

@@ -4,6 +4,8 @@ function after_install
 
   rvm install ruby-2.1.0
 
+  install-nginx
+
   crow notice "You are ready to setup the first user"
   crow notice "Use: add_user to add a user"
 
