@@ -32,7 +32,7 @@ apt-add-repository -y ppa:fish-shell/release-2 # fish
 apt-get update
 
 # install it all at once
-apt-get -y install byobu fish git toilet fail2ban nodejs htop zip emacs
+apt-get -y install byobu fish mosh git toilet fail2ban nodejs htop zip emacs
 
 # set default group
 addgroup serenity
