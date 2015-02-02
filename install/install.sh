@@ -34,7 +34,7 @@ chmod 0440 /etc/sudoers.d/serenity
 # checkout serenity
 mkdir -p /serenity
 cd /serenity
-git clone https://github.com/RamonGebben/Serenity.io.git
+git clone https://github.com/RamonGebben/Serenity.io.git .
 mkdir -p /serenity/sites
 mkdir -p /serenity/flags
 
