@@ -42,9 +42,6 @@ mkdir -p /serenity/flags
 chown -R root:serenity /serenity 
 chown -R root:serenity /serenity
 
-# link fish functions
-ln -s /serenity/fish /etc/fish/functions
-
 # fix default umask
 sed -i 's/UMASK\s*022/UMASK 002/g' /etc/login.defs
 
