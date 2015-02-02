@@ -15,15 +15,23 @@ apt-get update
 apt-get -y upgrade
 
 # add support for ppa
-apt-get install -y python-software-properties
+apt-get install -y python-software-properties build-essential
+
+# install node
 curl -sL https://deb.nodesource.com/setup | sudo bash -
 
+# install rvm
+curl -sSL https://get.rvm.io | sudo bash -s stable
+chmod -R g+w /usr/local/rvm
+rvm install ruby-2.1.0  
+
 # repositories
-add-apt-repository -y ppa:keithw/mosh  # mosh
+add-apt-repository -y ppa:keithw/mosh          # mosh
+apt-add-repository -y ppa:fish-shell/release-2 # fish
 apt-get update
 
 # install it all at once
-apt-get -y install byobu fish git toilet fail2ban nodejs
+apt-get -y install byobu fish git toilet fail2ban nodejs htop zip emacs
 
 # set default group
 addgroup serenity
@@ -35,12 +43,15 @@ chmod 0440 /etc/sudoers.d/serenity
 mkdir -p /serenity
 cd /serenity
 git clone https://github.com/RamonGebben/Serenity.io.git .
-mkdir -p /serenity/sites
+mkdir -p /serenity/projects
 mkdir -p /serenity/flags
 
 # fix ownership
 chown -R root:serenity /serenity 
 chown -R root:serenity /serenity
+
+# link fish functions
+ln -s /serenity/fish /etc/fish/functions
 
 # fix default umask
 sed -i 's/UMASK\s*022/UMASK 002/g' /etc/login.defs
