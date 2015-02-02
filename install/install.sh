@@ -58,6 +58,9 @@ ln -s /serenity/fish /etc/fish/functions
 # fix default umask
 sed -i 's/UMASK\s*022/UMASK 002/g' /etc/login.defs
 
-echo "==========================================================================="
-echo "REBOOT and run ds-update"
-#reboot
+echo "*****************************************************"
+echo "*****************************************************"
+echo "**              Install is complete!               **"
+echo "** Reboot and run `after_install` when back online **"
+echo "*****************************************************"
+echo "*****************************************************"
